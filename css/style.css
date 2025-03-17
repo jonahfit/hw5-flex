@@ -1,0 +1,254 @@
+body{
+
+font-family: "Poppins", serif;
+background-color: #f1f1f1;
+background-image: url(images/concrete_seamless.png);
+/* changing default font for body along with adding image with a backup background color*/
+
+}
+
+@keyframes growAndFade{
+
+    /* setting the start and finish of the keyframe for the animation of the logo */
+
+
+    from{
+        width: 25px;
+        opacity: 0;
+    }
+
+    to{
+        width: 475px;
+        opacity: 1;
+    }
+
+
+}
+
+header img{
+    width: 25px;
+    opacity: 0;
+    animation: growAndFade 5s forwards;
+    /* applying the keyframe to the image in the header*/
+}
+
+a:link, a:visited {
+   
+    color: blue;
+    /* making both the regular links and visited links the same color */
+}
+
+header{
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* making the header flex */
+}
+
+.nav_links{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    /*making the links a column*/
+
+}
+
+.card > header{
+
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0px 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+    /* applying the settings to heading of the cards */
+}
+.card{
+    border-radius: 50px 50px 0px 0px;
+}
+
+
+
+
+
+.card{
+
+    display: flex;
+    flex-direction: column;
+    flex-basis: 450px;
+}
+
+.pricing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.gallery img{
+
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    /* changing the view of the gallery */
+}
+
+
+
+@media screen and (min-width: 900px){
+
+
+header{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    /* changing flex settings of all headers*/
+}
+
+.nav_links{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    /* setting the start and finish of the keyframe for the animation of the logo */
+}
+
+.card{
+
+    display: flex;
+    flex-direction: column;
+    
+    flex-basis: 275px;
+/* changing flex settings*/
+
+}
+
+.pricing{
+
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        /* changing flex settings*/
+
+}
+
+body > header:first-child{
+    
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* making first header sticky and on top of all other elements */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+@media (prefers-reduced-motion: reduce){
+
+    header img{
+        animation: none;
+        width: 475px;
+        opacity: 1;
+    
+    }
+/* removing keyframe animation for logo */
+}
+
+
+
+
+
+
+
+
+
+
+@media print{
+
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: none;
+        /* changing font and background settings */
+    }
+    
+    body > header:first-child{
+    
+        flex-direction: column;
+    
+    /* chaning the first header of the body to column*/
+    }
+    
+    .nav_links{
+    
+       flex-direction: row;
+       width: 100vw;
+       justify-content: space-around;
+      
+    /* changing width of the list to take up the whole scren */
+    }
+    
+    
+    
+    .pricing{
+    
+        align-items: flex-end;
+        justify-content: center;
+        flex-wrap: none;
+        flex-direction: row;
+        
+    
+    }
+    
+    .card{
+    
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+        
+    
+    }
+    
+    .gallery, #gallery{
+        display: none;
+        /* removing gallery from print view */
+    }
+    
+    
+    .card li:nth-child(2)::after{
+    
+        content: "\1f44d";
+        /*adding the thumbs up after second li item in card */
+    }
+
+}
